@@ -1,6 +1,6 @@
 FROM bitnami/minideb:latest
 
-ARG INSTALL_URL="https://github.com/GuntharDeNiro/BTCT/releases/download/2304/gunthy_linux.zip"
+ARG INSTALL_URL="https://github.com/GuntharDeNiro/BTCT/releases/download/2329/gunthy_linux.zip"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ARG VCS_REF
