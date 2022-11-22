@@ -50,6 +50,7 @@ VOLUME [ \
 	"/gunbot/backups", \
 	"/gunbot/logs", \
 	"/gunbot/json" \
+	"/gunbot/customStrategies" \
 ]
 
 CMD /gunbot/gunthy-linux
