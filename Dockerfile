@@ -49,7 +49,7 @@ EXPOSE 5000
 VOLUME [ \
 	"/gunbot/backups", \
 	"/gunbot/logs", \
-	"/gunbot/json" \
+	"/gunbot/json", \
 	"/gunbot/customStrategies" \
 ]
 
