@@ -36,12 +36,13 @@ WORKDIR /tmp
 RUN curl -Lo /tmp/lin.zip ${INSTALL_URL}
 
 RUN unzip -q lin.zip \
- && rm -rf lin.zip \
+ && rm lin.zip \
  && rm -rf __MACOSX \
- && mv gunthy_* /gunbot \
- && rm -f /gunbot/config.js \
- && rm -f /gunbot/tgconfig.json \
- && rm -f /gunbot/autoconfig.json \
+ && rm config.js \
+ && rm autoconfig.json \
+ && rm UTAconfig.json \
+ && mkdir -p /gunbot \
+ && mv * /gunbot \
  && chmod +x /gunbot/gunthy-linux
 
 WORKDIR /gunbot
