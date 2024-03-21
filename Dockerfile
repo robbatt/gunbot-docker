@@ -1,6 +1,7 @@
 FROM bitnami/minideb:latest
 
-ARG INSTALL_URL="https://github.com/GuntharDeNiro/BTCT/releases/download/v2604/gunthy_linux.zip"
+## always download the most recent version from gunthy.org
+ARG INSTALL_URL="https://gunthy.org/downloads/gunthy_linux.zip"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ARG VCS_REF
