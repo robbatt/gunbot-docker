@@ -1,7 +1,9 @@
 FROM bitnami/minideb:latest
 
 ## always download the most recent version from gunthy.org
-ARG INSTALL_URL="https://gunthy.org/downloads/gunthy_linux.zip"
+ARG GUNBOT_VERSION="29.3.5"
+ARG INSTALL_URL_LATEST="https://gunthy.org/downloads/gunthy_linux.zip"
+ARG INSTALL_URL_VERISONED="https://gunthy.org/downloads/repo/gunthy-linux_${GUNBOT_VERSION}.zip"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ARG VCS_REF
@@ -33,7 +35,7 @@ RUN fc-cache -fv
 
 ## Install Gunbot
 WORKDIR /tmp
-RUN curl -Lo /tmp/lin.zip ${INSTALL_URL}
+RUN curl -Lo /tmp/lin.zip ${INSTALL_URL_VERISONED}
 
 RUN unzip -q lin.zip \
  && rm lin.zip \
