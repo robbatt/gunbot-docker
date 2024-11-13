@@ -36,7 +36,7 @@ RUN fc-cache -fv
 
 ## Install Gunbot
 WORKDIR /tmp
-RUN curl -Lo /tmp/lin.zip ${INSTALL_URL_VERISONED}
+RUN curl -Lo /tmp/lin.zip ${INSTALL_URL}
 
 RUN unzip -q lin.zip \
  && rm lin.zip \
