@@ -1,8 +1,9 @@
 FROM bitnami/minideb:latest
 
 ## always download the most recent version from gunthy.org
+##ARG INSTALL_URL_LATEST="https://gunthy.org/downloads/gunthy_linux.zip"
+
 ARG GUNBOT_VERSION="29.3.5"
-ARG INSTALL_URL_LATEST="https://gunthy.org/downloads/gunthy_linux.zip"
 ARG INSTALL_URL_VERISONED="https://gunthy.org/downloads/repo/gunthy-linux_${GUNBOT_VERSION}.zip"
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -15,7 +16,7 @@ TERM=xterm-256color \
 FORCE_COLOR=true \
 NPM_CONFIG_COLOR=always \
 MOCHA_COLORS=true \
-INSTALL_URL=${INSTALL_URL}
+INSTALL_URL=${INSTALL_URL_VERISONED}
 
 ## Setup pre-requisites
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
