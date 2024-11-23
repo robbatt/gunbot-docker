@@ -57,8 +57,8 @@ RUN unzip -q lin.zip \
 RUN curl -Lo /tmp/lin_versioned.zip ${INSTALL_URL_VERISONED}
 RUN unzip -q lin_versioned.zip \
  && rm lin_versioned.zip \
- && mv gunthy-linux /gunbot/gunthy-linux-${GUNBOT_VERSION} \
- && chmod +x /gunbot/gunthy-linux-${GUNBOT_VERSION}
+ && mv gunthy-linux /gunbot/ \
+ && chmod +x /gunbot/gunthy-linux
 
 WORKDIR /gunbot
 
@@ -70,4 +70,4 @@ VOLUME [ \
 	"/gunbot/customStrategies" \
 ]
 
-CMD /gunbot/gunthy-linux-${GUNBOT_VERSION}
+CMD /gunbot/gunthy-linux
