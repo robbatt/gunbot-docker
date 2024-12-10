@@ -34,19 +34,16 @@ RUN fc-cache -fv
 
 ## Download Gunbot Full Package
 WORKDIR /tmp
-RUN curl -Lo /tmp/lin.zip ${INSTALL_URL_FULL}
-
-RUN unzip -q lin.zip \
- && rm lin.zip \
- && mkdir -p /gunbot \
+RUN mkdir -p /gunbot \
+ && curl -Lo /tmp/lin.zip ${INSTALL_URL_FULL} \
+ && unzip -q lin.zip \
  && mv node_modules /gunbot \
- && rm -rf *
-
-RUN curl -Lo /tmp/mon.zip ${INSTALL_URL_MONITOR}
-RUN unzip -q mon.zip \
- && rm mon.zip \
+ && mv config.js /gunbot \
+ && curl -Lo /tmp/mon.zip ${INSTALL_URL_MONITOR} \
+ && unzip -q mon.zip \
  && mv monit-linux /gunbot/ \
- && chmod +x /gunbot/monit-linux
+ && chmod +x /gunbot/monit-linux \
+ && rm -rf *
 
 WORKDIR /gunbot
 
