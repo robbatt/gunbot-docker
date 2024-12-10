@@ -47,6 +47,8 @@ RUN mkdir -p /gunbot \
 
 WORKDIR /gunbot
 
-EXPOSE 5000
+# different default port
+EXPOSE 3000
 
 CMD /gunbot/monit-linux
+
