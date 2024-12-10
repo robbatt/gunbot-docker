@@ -14,7 +14,7 @@ FORCE_COLOR=true \
 NPM_CONFIG_COLOR=always \
 MOCHA_COLORS=true \
 INSTALL_URL_FULL=${INSTALL_URL_FULL} \
-INSTALL_URL_MONITOR=${INSTALL_URL_MONITOR} \
+INSTALL_URL_MONITOR=${INSTALL_URL_MONITOR}
 
 ## Setup pre-requisites
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
