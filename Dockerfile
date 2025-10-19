@@ -1,7 +1,7 @@
 FROM bitnami/minideb:latest
 
 ## this is only the executable from the repo, assuming we have a working setup with mounted volumes (gunthy_linux exe only)
-ARG GUNBOT_VERSION="29.3.5"
+ARG GUNBOT_VERSION="30.6.7"
 ARG INSTALL_URL_VERISONED="https://gunthy.org/downloads/repo/gunthy-linux_${GUNBOT_VERSION}.zip"
 
 ## to download the most recent version from gunthy.org (full package)
