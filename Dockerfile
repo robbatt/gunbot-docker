@@ -45,8 +45,8 @@ RUN curl -Lo /tmp/lin.zip ${INSTALL_URL_FULL}
 
 RUN unzip -q lin.zip \
  && rm lin.zip \
- && rm -rf __MACOSX \
  && rm config.js \
+ && rm config-js-example.txt \
  && rm autoconfig.json \
  && rm UTAconfig.json \
 # && rm gunthy-linux \
