@@ -71,4 +71,4 @@ VOLUME [ \
 	"/gunbot/customStrategies" \
 ]
 
-CMD ["gunthy-linux"]
+CMD ["/gunbot/gunthy-linux"]
