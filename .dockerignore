@@ -1,2 +1,9 @@
 config
-*.zip
+archive
+test
+.idea
+.github
+.gitignore
+Dockerfile*
+LICENSE
+README

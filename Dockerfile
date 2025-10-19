@@ -49,16 +49,17 @@ RUN unzip -q lin.zip \
  && rm config.js \
  && rm autoconfig.json \
  && rm UTAconfig.json \
- && rm gunthy-linux \
+# && rm gunthy-linux \
+ && chmod +x /gunthy-linux \
  && mkdir -p /gunbot \
  && mv * /gunbot
 # && chmod +x /gunbot/gunthy-linux # removed because buggy, replaced with following versioned exe
 
-RUN curl -Lo /tmp/lin_versioned.zip ${INSTALL_URL_VERISONED}
-RUN unzip -q lin_versioned.zip \
- && rm lin_versioned.zip \
- && mv gunthy-linux /gunbot/ \
- && chmod +x /gunbot/gunthy-linux
+#RUN curl -Lo /tmp/lin_versioned.zip ${INSTALL_URL_VERISONED}
+#RUN unzip -q lin_versioned.zip \
+# && rm lin_versioned.zip \
+# && mv gunthy-linux /gunbot/ \
+# && chmod +x /gunbot/gunthy-linux
 
 WORKDIR /gunbot
 
