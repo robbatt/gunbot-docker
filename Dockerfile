@@ -2,7 +2,7 @@ FROM bitnami/minideb:latest
 
 ## this is only the executable from the repo, assuming we have a working setup with mounted volumes (gunthy_linux exe only)
 ARG GUNBOT_VERSION="30.6.7"
-ARG INSTALL_URL_VERISONED="https://gunthy.org/downloads/repo/gunthy-linux_${GUNBOT_VERSION}.zip"
+ARG INSTALL_URL_VERSIONED="https://gunthy.org/downloads/repo/gunthy-linux_${GUNBOT_VERSION}.zip"
 
 ## to download the most recent version from gunthy.org (full package)
 ARG INSTALL_URL_LATEST="https://gunthy.org/downloads/gunthy_linux.zip"
@@ -21,7 +21,7 @@ FORCE_COLOR=true \
 NPM_CONFIG_COLOR=always \
 MOCHA_COLORS=true \
 INSTALL_URL_FULL=${INSTALL_URL_FULL} \
-INSTALL_URL_VERISONED=${INSTALL_URL_VERISONED}
+INSTALL_URL_VERISONED=${INSTALL_URL_VERSIONED}
 
 ## Setup pre-requisites
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -50,7 +50,7 @@ RUN unzip -q lin.zip \
  && rm autoconfig.json \
  && rm UTAconfig.json \
 # && rm gunthy-linux \
- && chmod +x /gunthy-linux \
+ && chmod +x gunthy-linux \
  && mkdir -p /gunbot \
  && mv * /gunbot
 # && chmod +x /gunbot/gunthy-linux # removed because buggy, replaced with following versioned exe
@@ -71,4 +71,4 @@ VOLUME [ \
 	"/gunbot/customStrategies" \
 ]
 
-CMD /gunbot/gunthy-linux
+CMD ["gunthy-linux"]
